@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  @apply opacity-95;
+}
+
 body {
   @apply text-zinc-300 bg-zinc-900;
 }
