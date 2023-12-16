@@ -1,17 +1,5 @@
-/**
- * Display all tasks by priority
- */
-import data from "@/app/data";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircle } from "@fortawesome/free-solid-svg-icons";
-export default function AllTasks() {
-  const tasks = data; //call api
-
-  //mark task as completed
-  const removeTask = (taskId) => {
-
-  }
-
+"use client"
+export default function AllTasks({ tasks, removeTask }) {
   // Define a custom comparator function for sorting by priority
   function compareTasksByPriority(taskA, taskB) {
     const priorityOrder = { low: 1, medium: 2, high: 3 }; // Define the priority order
@@ -72,16 +60,22 @@ export default function AllTasks() {
           )} w-full flex items-center my-2 rounded-sm p-3 bg-zinc-800 justify-between`}
         >
           <div className="flex flex-row w-full gap-2 items-center">
-              <span
-                className={`text-white min-w-[50px] flex max-w-fit items-center justify-center rounded-sm px-1 uppercase text-xs font-semibold ${determineColorByPriority(
-                  task.priority
-                )}`}
-              >
-                {task.priority}
-              </span>
+            <span
+              className={`text-white min-w-[50px] flex max-w-fit items-center justify-center rounded-sm px-1 uppercase text-xs font-semibold ${determineColorByPriority(
+                task.priority
+              )}`}
+            >
+              {task.priority}
+            </span>
             <span className="text-sm">{task.name}</span>
           </div>
-          <button onClick={removeTask(task.id)} aria-label="remove task" className="text-zinc-500"><div className="w-4 h-4 rounded-full border-2 border-emerald-500 hover:bg-emerald-500"/></button>
+          <button
+            onClick={() => removeTask(task.id)}
+            aria-label="remove task"
+            className="text-zinc-500"
+          >
+            <div className="w-4 h-4 rounded-full border-2 border-emerald-500 hover:bg-emerald-500" />
+          </button>
         </div>
       ))}
     </section>
