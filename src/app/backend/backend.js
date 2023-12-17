@@ -16,8 +16,10 @@ export async function getTasks() {
         return JSON.parse(tasks || '[]');
     } catch (error) {
         console.error('Error in getTasks:', error);
+        return []; // Return an empty array in case of an error
     }
 }
+
 
 export async function addTask(task) {
     try {
@@ -30,6 +32,7 @@ export async function addTask(task) {
         return tasks;
     } catch (error) {
         console.error('Error in addTask:', error);
+        return []; // Return an empty array in case of an error
     }
 }
 
@@ -42,5 +45,6 @@ export async function removeTask(id) {
         return filteredTasks;
     } catch (error) {
         console.error('Error in removeTask:', error);
+        return []; // Return an empty array in case of an error
     }
 }

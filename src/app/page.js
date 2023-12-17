@@ -29,7 +29,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="w-[500px] max-w-[90vh] mx-auto flex flex-col items-center justify-center">
+    <div className="w-[250px] max-w-[90vh] mx-auto flex flex-col items-center justify-center">
       <AllTasks tasks={tasks} removeTask={handleRemoveTask} />
       <NewTask addTask={handleAddTask} />
     </div>

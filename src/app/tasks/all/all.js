@@ -51,7 +51,7 @@ export default function AllTasks({ tasks, removeTask }) {
     );
   }
   return (
-    <section className="w-full p-2 mx-auto flex items-center justify-start flex-col text-sm h-[600px] max-h-[70vh] overflow-y-auto">
+    <section className="w-full p-2 mx-auto flex items-center justify-start flex-col text-sm h-[250px] max-h-[60vh] overflow-y-auto">
       {tasks.map((task, index) => (
         <div
           key={task.id || index}

@@ -50,7 +50,7 @@ export default function NewTask({ addTask }) {
           onChange={handleChange}
           name="name"
           value={task.name || ""}
-          className=" pl-10 bg-transparent border focus:shadow focus:border-none hover:shadow hover:shadow-emerald-500 border-zinc-700 outline-none shadow-zinc-200 focus:shadow-emerald-500 text-base rounded-md w-full px-2 py-1"
+          className=" pl-10 bg-transparent border focus:shadow focus:border-none hover:shadow hover:shadow-emerald-500 border-zinc-700 outline-none shadow-zinc-200 focus:shadow-emerald-500 text-sm rounded-md w-full px-2 py-1"
         />
         <div className="absolute left-0 top-0 h-full w-fit flex items-center hover:items-start justify-center pl-2 hover:pointer group">
           <span
