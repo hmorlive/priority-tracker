@@ -43,14 +43,14 @@ export default function NewTask({ addTask }) {
       className="w-full flex  mt-4 gap-2 items-center justify-center p-2"
       onSubmit={handleSubmit}
     >
-      <div className="w-full relative">
+      <div className="w-full relative flex items-center">
         <input
           type="text"
           maxLength={200}
           onChange={handleChange}
           name="name"
           value={task.name || ""}
-          className=" pl-10 bg-transparent border focus:shadow focus:border-none hover:shadow hover:shadow-emerald-500 border-zinc-700 outline-none shadow-zinc-200 focus:shadow-emerald-500 text-sm rounded-md w-full px-2 py-1"
+          className=" px-8 bg-transparent border-none shadow-sm focus:border-none hover:shadow hover:shadow-emerald-500 border-zinc-700 outline-none shadow-zinc-200 focus:shadow-md focus:shadow-emerald-500 text-sm rounded-md w-full py-1"
         />
         <div className="absolute left-0 top-0 h-full w-fit flex items-center hover:items-start justify-center pl-2 hover:pointer group">
           <span
@@ -92,14 +92,13 @@ export default function NewTask({ addTask }) {
             </li>
           </ul>
         </div>
+        <button
+          type="submit"
+          aria-label="Create Task"
+          className="absolute right-0 hover:text-emerald-500 text-zinc-200 p-2 text-base">
+          <FontAwesomeIcon icon={faPlusCircle} />
+        </button>
       </div>
-      <button
-        type="submit"
-        aria-label="Create Task"
-        className="text-zinc-200 bg-transparent border-none px-3 py-2 text-2xl rounded-md"
-      >
-        <FontAwesomeIcon icon={faPlusCircle} />
-      </button>
     </form>
   );
 }
